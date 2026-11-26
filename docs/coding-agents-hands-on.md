@@ -621,8 +621,7 @@ It should:
 4. Add a button that triggers the Coded Agent
 
 The name of the app should be {YourName}RecruiterApp. Use uipath-coded-apps
-for the table component. Stop after the build: don't pack, publish, or deploy
-the app yet.
+for the table component.
 ```
 
 And the structure it generates:
@@ -678,7 +677,7 @@ Then open `http://localhost:5173` and sign in with UiPath. Check that the Jobs, 
 
 ### Deploy the app
 
-Nothing is packed, published, or deployed yet: the prompt told the agent to stop at the build. When the app works locally, ask your coding agent to take it live:
+Your coding agent usually stops after the build and asks before it packs, publishes, or deploys anything. When the app works locally, ask it to take it live:
 
 ```text
 Pack, publish, and deploy {YourName}RecruiterApp to the CodingAgentsILT folder.
