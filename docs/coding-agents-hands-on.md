@@ -513,6 +513,18 @@ Four things worth noticing in that output:
   </div>
 </div>
 
+### Run it in Studio
+
+Once your coding agent has generated the workflow, check that it really works before you move on:
+
+1. Open **Studio Desktop**.
+2. Open the project your coding agent created: `{YourName}RegisterInUiBank`. Your coding agent tells you where it saved it. In Studio, select **Open** and browse to the project's `project.json`.
+3. Run the workflow manually: select **Debug File** › **Run File**, or press **Ctrl + F6**.
+4. Watch the robot open `uibank.uipath.com/register-account` and fill in the form for each candidate in `candidates.csv`.
+
+!!! tip "If the run fails"
+    Copy the error message from Studio's **Output** panel and paste it into your coding agent. Ask it to fix the workflow, then run it again in Studio.
+
 ## <img src="../coding-agents-hands-on.images/icon-dashboard.png" alt="" style="width: 1.05em; height: 1.05em; vertical-align: -0.12em; margin-right: 0.4em; border: none; box-shadow: none;">Lab 3 — the Coded App { .lab-title }
 
 **100 min build + 20 min review**
