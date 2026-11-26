@@ -436,10 +436,11 @@ Download the file, or copy the text and save it as `candidates.csv` yourself. Bo
     Clara,Osei,,Female,Ms,Full-time,7/4/1992,Single,1,clara.osei,clara.osei@example.com,Welcome2026!
     ```
 
-!!! note "Three things to tell the workflow about this data"
+!!! note "Four things to tell the workflow about this data"
 
     - An empty `middle_name` is valid. The form should skip the field, not type an empty string.
     - The date format is `MM/DD/YYYY`, which matches the form's picker.
+    - UiBank rejects a username or email that's already registered. Everyone in the room starts from the same three candidates, and you'll run the workflow more than once, so the prompt asks the workflow to add `_{YourName}` and a timestamp to both.
     - All test passwords are demo-grade. In production, pull them from a vault.
 
 ### The prompt
@@ -449,8 +450,12 @@ Build a UiPath workflow that registers each candidate from candidates.csv at
 uibank.uipath.com/register-account. The name of the workflow should be
 {YourName}RegisterInUiBank. candidates.csv contains first_name, last_name,
 middle_name, sex, title, employment_status, date_of_birth, marital_status,
-num_dependents, username, email, and password. After each registration, write
-the registration Status back to Data Service ({YourName}Candidates entity).
+num_dependents, username, email, and password. UiBank doesn't allow two
+accounts with the same username or email, so make both unique on every run:
+add _{YourName} and a timestamp to the username, and to the part of the email
+before the @ (for example, alice.nguyen_{YourName}_20261126153045 and
+alice.nguyen_{YourName}_20261126153045@example.com). After each registration,
+write the registration Status back to Data Service ({YourName}Candidates entity).
 ```
 
 !!! tip "Your coding agent might ask to install UiPath packages"
