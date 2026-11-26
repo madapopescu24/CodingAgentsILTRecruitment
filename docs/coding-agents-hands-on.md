@@ -30,7 +30,7 @@ Three components in the session, plus a fourth as homework:
 
 1. **Coded Agent** — a Python LangGraph agent that takes a list of job titles, web-searches current openings, generates a structured job description per role, scores a candidate pool against each one, and writes jobs and top-3 matches to Data Service
 2. **RPA Workflow** — a Studio XAML workflow that reads the matched candidates from Data Service, registers each one on the UiBank web form, and writes the registration status back
-3. **Coded App** — a React Coded App that reads the Jobs, Matches and Candidates entities and presents them to a recruiter, with a button that triggers the agent on demand
+3. **Coded App** — a React Coded App that reads the Jobs, Job Matches and Candidates entities and presents them to a recruiter, with a button that triggers the agent on demand
 4. **Maestro Process** *(homework)* — a UiPath Flow that runs the agent, pauses for a recruiter to approve the shortlist, triggers the RPA registration, and surfaces the result in the app
 
 ## The scenario
@@ -187,7 +187,8 @@ Build a UiPath Coded Agent in LangGraph that:
 3. Scores a list of candidates (generate the JSON list locally and use it as
    part of the solution; it should contain at least one profile for Forward
    Deployed Engineer) against each JD
-4. Writes jobs and top-3 matches per role to Data Service
+4. Writes jobs and top-3 matches per role to the Data Service Jobs and
+   Job Matches entities
 
 Include an eval set with 5 cases. The name of the agent should be
 {YourName}JobMatchingAgent. Use the UiPath SDK.
@@ -247,7 +248,7 @@ def match_candidates(state):
 
 def persist(state):
     sdk.entities.bulk_create("Jobs", state["jobs"])
-    sdk.entities.bulk_create("Matches", state["matches"])
+    sdk.entities.bulk_create("JobMatches", state["matches"])
 ```
 
 ### Publish the agent
@@ -455,7 +456,7 @@ accounts with the same username or email, so make both unique on every run:
 add _{YourName} and a timestamp to the username, and to the part of the email
 before the @ (for example, alice.nguyen_{YourName}_20261126153045 and
 alice.nguyen_{YourName}_20261126153045@example.com). After each registration,
-write the registration Status back to Data Service ({YourName}Candidates entity).
+write the registration Status back to Data Service (Candidates entity).
 ```
 
 !!! tip "Your coding agent might ask to install UiPath packages"
@@ -578,7 +579,7 @@ Once your coding agent confirms the process is created, run it from **Orchestrat
 
 ### What you'll build
 
-A recruiter dashboard that reads the Jobs, Matches, and Candidates entities from Data Service.
+A recruiter dashboard that reads the Jobs, Job Matches, and Candidates entities from Data Service.
 
 <div style="background: #faf8f6; border: 1px solid #eee3dc; border-left: 4px solid #FA4616; padding: 18px 22px; margin: 1.4rem 0;">
   <div style="font-size: 14px; font-weight: 700; letter-spacing: 0.09em; color: #FA4616; margin-bottom: 12px;">WHAT THE DASHBOARD SHOWS</div>
@@ -614,7 +615,7 @@ It should:
 
 1. Read Jobs from the UiPath Data Service Jobs entity
 2. For each job, show the JD and matched candidates
-3. Show registration status from the {YourName}Candidates entity
+3. Show registration status from the Candidates entity
 4. Add a button that triggers the Coded Agent
 
 The name of the app should be {YourName}RecruiterApp. Use uipath-coded-apps
@@ -647,7 +648,7 @@ After a few minutes your coding agent finishes with a summary of what it built a
 <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; margin-bottom: 1.5rem;">
   <div style="flex: 1 1 220px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 4px solid #FA4616; padding: 18px 20px; box-sizing: border-box;">
     <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 9px;">The tables</div>
-    <div style="font-size: 14.5px; color: #4a4a4a; line-height: 1.55;">The Candidates, Jobs, and Matches tabs use the <strong>UiPath DataTable</strong> widget from the coded apps tooling, with every column read-only. The matched candidates for a single job are built by hand, because the widget always loads a whole entity and can't filter it down to one job.</div>
+    <div style="font-size: 14.5px; color: #4a4a4a; line-height: 1.55;">The Candidates, Jobs, and Job Matches tabs use the <strong>UiPath DataTable</strong> widget from the coded apps tooling, with every column read-only. The matched candidates for a single job are built by hand, because the widget always loads a whole entity and can't filter it down to one job.</div>
   </div>
   <div style="flex: 1 1 220px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 4px solid #FA4616; padding: 18px 20px; box-sizing: border-box;">
     <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 9px;">The OAuth app</div>
@@ -671,7 +672,7 @@ cd recruiter-dashboard
 npm run dev
 ```
 
-Then open `http://localhost:5173` and sign in with UiPath. Check that the Jobs, Matches, and Candidates tabs load data, and that the button triggers the Coded Agent.
+Then open `http://localhost:5173` and sign in with UiPath. Check that the Jobs, Job Matches, and Candidates tabs load data, and that the button triggers the Coded Agent.
 
 ### Deploy the app
 
@@ -918,7 +919,7 @@ Build a Maestro Flow called {YourName}RecruitmentPipeline that orchestrates the
 three components I already deployed:
 
 1. Start by running my {YourName}JobMatchingAgent coded agent, passing in a list
-   of target job titles. Wait for it to finish writing Jobs and Matches to
+   of target job titles. Wait for it to finish writing Jobs and Job Matches to
    Data Service.
 2. Then run my {YourName}RegisterInUiBank RPA process for the matched candidates,
    so each one gets registered on UiBank and the status is written back.
