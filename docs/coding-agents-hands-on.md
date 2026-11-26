@@ -269,6 +269,16 @@ def persist(state):
 
     <video src="../coding-agents-hands-on.images/run-agent-local-dev-server.mp4" autoplay loop muted playsinline controls aria-label="Running the job matching agent from the local dev console: entering a job title, clicking Execute, watching the graph steps complete, and reading the ranked candidates in the output" style="display: block; width: 100%; margin: 1.5rem auto; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);"></video>
 
+    Once the local dev server is running, your coding agent might offer to deploy the agent for you — to your personal workspace, the tenant feed, or a specific folder. If it does, ask it to deploy:
+
+    ```text
+    Deploy to tenant feed and create the process in CodingAgentsILT folder.
+    ```
+
+    ![The coding agent's recap after the local dev server starts, offering to deploy the agent, with the deploy prompt typed in](coding-agents-hands-on.images/deploy-to-tenant-feed-prompt.png)
+
+    If your coding agent doesn't offer this, publish the agent with one of the two options below.
+
 Both paths do the same thing. Run the commands yourself if you want to see each step, or hand the whole job to your coding agent.
 
 === "Manually"
