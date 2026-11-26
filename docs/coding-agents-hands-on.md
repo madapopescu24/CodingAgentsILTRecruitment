@@ -690,6 +690,8 @@ Your coding agent usually stops after the build and asks before it packs, publis
 Pack, publish, and deploy {YourName}RecruiterApp to the CodingAgentsILT folder.
 ```
 
+![The coding agent's summary after building the recruiter app, offering to pack, publish, and deploy it, with the deploy prompt typed in](coding-agents-hands-on.images/deploy-coded-app-prompt.png)
+
 Behind the scenes it runs three commands, the same ones you'd run yourself:
 
 ```bash
