@@ -18,7 +18,7 @@
     | :--- | :--- | ---: | :--- |
     | ⚙️ <strong style="color: var(--md-primary-fg-color);">RPA Workflow</strong> | Register candidates on UiBank | 1.5h | Hands-on |
     | 📊 <strong style="color: var(--md-primary-fg-color);">Coded App</strong> | Dashboard of jobs, matches, and registered candidates | 2h | Hands-on |
-    | 🔗 <strong style="color: var(--md-primary-fg-color);"><a href="../coding-agents-hands-on/#homework-connect-it-all-in-maestro" style="color: inherit;">Integrate in Maestro</a></strong> <em style="color: #6a6a6a; font-weight: 400;">(optional)</em> | Bring the agents, RPA, and apps together end-to-end | 0.5h | Homework |
+    | 🔗 <strong style="color: var(--md-primary-fg-color);"><a href="../../coding-agents-hands-on/#homework-connect-it-all-in-maestro" style="color: inherit;">Integrate in Maestro</a></strong> <em style="color: #6a6a6a; font-weight: 400;">(optional)</em> | Bring the agents, RPA, and apps together end-to-end | 0.5h | Homework |
 
 === "One day"
 
@@ -30,7 +30,7 @@
     | 🤖 <strong style="color: var(--md-primary-fg-color);">Coded Agent</strong> | Research jobs, generate JDs, match candidates | 1.5h | Hands-on |
     | ⚙️ <strong style="color: var(--md-primary-fg-color);">RPA Workflow</strong> | Register candidates on UiBank | 1.5h | Hands-on |
     | 📊 <strong style="color: var(--md-primary-fg-color);">Coded App</strong> | Dashboard of jobs, matches, and registered candidates | 2h | Hands-on |
-    | 🔗 <strong style="color: var(--md-primary-fg-color);"><a href="../coding-agents-hands-on/#homework-connect-it-all-in-maestro" style="color: inherit;">Integrate in Maestro</a></strong> <em style="color: #6a6a6a; font-weight: 400;">(optional)</em> | Bring the agents, RPA, and apps together end-to-end | 0.5h | Homework |
+    | 🔗 <strong style="color: var(--md-primary-fg-color);"><a href="../../coding-agents-hands-on/#homework-connect-it-all-in-maestro" style="color: inherit;">Integrate in Maestro</a></strong> <em style="color: #6a6a6a; font-weight: 400;">(optional)</em> | Bring the agents, RPA, and apps together end-to-end | 0.5h | Homework |
 
 !!! info "The Maestro integration is optional"
     The three labs stand on their own — you finish with a working agent, workflow, and app. Wiring them into a single **Maestro** orchestration is a deep dive for anyone who wants to take it further, and it works well as homework after the session.
