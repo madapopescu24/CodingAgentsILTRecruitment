@@ -67,8 +67,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Setup: setup.md
-  - What's a Coding Agent?: what-is-a-coding-agent.md
   - Agenda: loan-application-underwriting/agenda.md
+  - What's a Coding Agent?: what-is-a-coding-agent.md
   - Hands-on: coding-agents-hands-on.md
   - Next Steps: next-steps.md
 
