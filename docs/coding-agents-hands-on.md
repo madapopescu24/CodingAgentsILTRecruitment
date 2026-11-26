@@ -452,6 +452,11 @@ middle_name, sex, title, employment_status, date_of_birth, marital_status,
 num_dependents, username, email, and password.
 ```
 
+!!! tip "Your coding agent might ask to install UiPath packages"
+    If your project doesn't have the packages the workflow needs yet, your coding agent asks before it adds them — for example **UiPath.UIAutomation.Activities** to drive the browser form and **UiPath.Excel.Activities** to read `candidates.csv`. Confirm the install (choose **Install both** or the equivalent option). If you say no, the agent writes the workflow with placeholder selectors marked `TODO Indicate`, and you have to fix the targets in Studio yourself.
+
+    ![The coding agent asking for permission to install UiPath.UIAutomation.Activities and UiPath.Excel.Activities, with Install both as the recommended option](coding-agents-hands-on.images/install-packages-question.png)
+
 ### How the workflow skill thinks
 
 The `uipath-rpa` skill is discovery-first. It reads before it writes:
