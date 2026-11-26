@@ -417,12 +417,24 @@ The four stages run in order — `Read` picks up what Lab 1 wrote, and `Update` 
 
 ### The sample candidate data
 
-```csv
-first_name,last_name,middle_name,sex,title,employment_status,date_of_birth,marital_status,num_dependents,username,email,password
-Alice,Nguyen,,Female,Ms,Full-time,1/15/1990,Single,0,alice.nguyen,alice.nguyen@example.com,Welcome2026!
-Ben,Carter,J.,Male,Mr,Full-time,3/22/1985,Married,2,ben.carter,ben.carter@example.com,Welcome2026!
-Clara,Osei,,Female,Ms,Full-time,7/4/1992,Single,1,clara.osei,clara.osei@example.com,Welcome2026!
-```
+Download the file, or copy the text and save it as `candidates.csv` yourself. Both give you the same data.
+
+=== "Download the file"
+
+    [⬇️ Download candidates.csv](dependencies/candidates.csv){ download="candidates.csv" .md-button }
+
+    Save it in your workflow project folder.
+
+=== "Copy the text"
+
+    Copy this and save it as `candidates.csv` in your workflow project folder:
+
+    ```csv
+    first_name,last_name,middle_name,sex,title,employment_status,date_of_birth,marital_status,num_dependents,username,email,password
+    Alice,Nguyen,,Female,Ms,Full-time,1/15/1990,Single,0,alice.nguyen,alice.nguyen@example.com,Welcome2026!
+    Ben,Carter,J.,Male,Mr,Full-time,3/22/1985,Married,2,ben.carter,ben.carter@example.com,Welcome2026!
+    Clara,Osei,,Female,Ms,Full-time,7/4/1992,Single,1,clara.osei,clara.osei@example.com,Welcome2026!
+    ```
 
 !!! note "Three things to tell the workflow about this data"
 
