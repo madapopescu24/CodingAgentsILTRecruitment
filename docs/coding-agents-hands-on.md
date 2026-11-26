@@ -525,6 +525,16 @@ Once your coding agent has generated the workflow, check that it really works be
 !!! tip "If the run fails"
     Copy the error message from Studio's **Output** panel and paste it into your coding agent. Ask it to fix the workflow, then run it again in Studio.
 
+### Publish the workflow
+
+Once the workflow runs in Studio, go back to your coding agent. It might ask whether to run the workflow itself or add more checks first. Ask it to publish instead:
+
+```text
+Publish and create the process in CodingAgentsILT folder.
+```
+
+![The coding agent's recap after building the workflow, asking whether to run it, with the publish prompt typed in](coding-agents-hands-on.images/publish-rpa-process-prompt.png)
+
 ## <img src="../coding-agents-hands-on.images/icon-dashboard.png" alt="" style="width: 1.05em; height: 1.05em; vertical-align: -0.12em; margin-right: 0.4em; border: none; box-shadow: none;">Lab 3 — the Coded App { .lab-title }
 
 **100 min build + 20 min review**
