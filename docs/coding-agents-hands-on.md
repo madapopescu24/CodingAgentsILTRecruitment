@@ -257,6 +257,14 @@ def persist(state):
 
     ![The coding agent's Delivery question after all evals pass, with options Studio Web, Local dev web server, and Skip](coding-agents-hands-on.images/delivery-question-local-dev-server.png)
 
+    The dev server keeps running in the background. When it starts, your coding agent prints a link to the local dev console, for example:
+
+    ```text
+    Local dev console: http://localhost:8080/?token=<your-token>
+    ```
+
+    Open that link in your browser to see your agent running and try it out. The token is unique to you and changes each time the dev server starts, so copy the full link from your own terminal — the one above won't work as is.
+
 Both paths do the same thing. Run the commands yourself if you want to see each step, or hand the whole job to your coding agent.
 
 === "Manually"
