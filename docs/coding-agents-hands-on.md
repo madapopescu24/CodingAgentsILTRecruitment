@@ -609,11 +609,12 @@ It should:
 
 1. Read Jobs from the UiPath Data Service Jobs entity
 2. For each job, show the JD and matched candidates
-3. Show registration status from the Candidates entity
+3. Show registration status from the {YourName}Candidates entity
 4. Add a button that triggers the Coded Agent
 
 The name of the app should be {YourName}RecruiterApp. Use uipath-coded-apps
-for the table component.
+for the table component. Stop after the build: don't pack, publish, or deploy
+the app yet.
 ```
 
 And the structure it generates:
@@ -633,6 +634,60 @@ recruiter-dashboard/
 │   └── api/uipath.ts
 └── README.md
 ```
+
+### What your coding agent reports back
+
+After a few minutes your coding agent finishes with a summary of what it built and what it set up. Here's what to look for in it.
+
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; margin-bottom: 1.5rem;">
+  <div style="flex: 1 1 220px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 4px solid #FA4616; padding: 18px 20px; box-sizing: border-box;">
+    <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 9px;">The tables</div>
+    <div style="font-size: 14.5px; color: #4a4a4a; line-height: 1.55;">The Candidates, Jobs, and Matches tabs use the <strong>UiPath DataTable</strong> widget from the coded apps tooling, with every column read-only. The matched candidates for a single job are built by hand, because the widget always loads a whole entity and can't filter it down to one job.</div>
+  </div>
+  <div style="flex: 1 1 220px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 4px solid #FA4616; padding: 18px 20px; box-sizing: border-box;">
+    <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 9px;">The OAuth app</div>
+    <div style="font-size: 14.5px; color: #4a4a4a; line-height: 1.55;">The agent creates a public (non-confidential) OAuth app in your tenant called <code>{YourName}RecruiterApp</code>. It can read and write Data Service, start and monitor Orchestrator jobs, and redirects to <code>http://localhost:5173</code>. You don't have to create it by hand.</div>
+  </div>
+  <div style="flex: 1 1 220px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 4px solid #FA4616; padding: 18px 20px; box-sizing: border-box;">
+    <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 9px;">The config</div>
+    <div style="font-size: 14.5px; color: #4a4a4a; line-height: 1.55;">Tenant details (org and tenant) go in <code>uipath.json</code>. The Data Service entity IDs and the agent's process name and folder go in <code>src/config.ts</code>. That's where to look if the app reads the wrong entity or triggers the wrong process.</div>
+  </div>
+</div>
+
+!!! note "Your OAuth app's client ID is yours alone"
+    The summary shows the client ID of the OAuth app the agent created. Everyone gets a different one, so don't copy IDs from a neighbour's screen or from this page.
+
+### Run the app locally
+
+Start the app from the project folder:
+
+```bash
+cd recruiter-dashboard
+npm run dev
+```
+
+Then open `http://localhost:5173` and sign in with UiPath. Check that the Jobs, Matches, and Candidates tabs load data, and that the button triggers the Coded Agent.
+
+### Deploy the app
+
+Nothing is packed, published, or deployed yet: the prompt told the agent to stop at the build. When the app works locally, ask your coding agent to take it live:
+
+```text
+Pack, publish, and deploy {YourName}RecruiterApp to the CodingAgentsILT folder.
+```
+
+Behind the scenes it runs three commands, the same ones you'd run yourself:
+
+```bash
+uip codedapp pack dist -n {YourName}RecruiterApp --version 1.0.0
+uip codedapp publish
+uip codedapp deploy --folder-key <CodingAgentsILT-folder-key>
+```
+
+The agent looks up the folder key for you. To find it yourself, run `uip or folders list --output json` and copy the key of the **CodingAgentsILT** folder.
+
+!!! tip "Optional: a Register candidate button"
+    Your `{YourName}RegisterInUiBank` process from Lab 2 is in the same **CodingAgentsILT** folder, so your coding agent may offer to add a **Register candidate** button next to each candidate. Say yes if you have time. The recruiter can then register a candidate straight from the dashboard.
 
 ### The Data Service hook
 
