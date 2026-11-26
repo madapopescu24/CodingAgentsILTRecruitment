@@ -76,6 +76,20 @@ Three components in the session, plus a fourth as homework:
 
 One connected story across all three labs — each one hands its output to the next through Data Service.
 
+## Authenticate with your tenant
+
+You did this during [Setup](setup.md#6-authenticate-with-your-tenant), but do it once more before you start Lab 1. Your login may have expired since then, and every lab writes to the same tenant.
+
+```bash
+uip login --authority https://cloud.uipath.com --organization tpenlabs -t CodingAgentsPractice
+```
+
+Verify you're pointed at the right place:
+
+```bash
+uip login status --output json
+```
+
 ## <img src="../coding-agents-hands-on.images/icon-search.png" alt="" style="width: 1.05em; height: 1.05em; vertical-align: -0.12em; margin-right: 0.4em; border: none; box-shadow: none;">Lab 1 — the Coded Agent { .lab-title }
 
 <div style="font-size: 15px; font-style: italic; color: #d1603a; margin: -0.6rem 0 1rem;">Jobs research + candidate matching</div>

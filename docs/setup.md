@@ -203,7 +203,7 @@ Verify the tool is available:
 uip tools list
 ```
 
-## 6. Authenticate with Your Tenant (TBD)
+## 6. Authenticate with Your Tenant
 
 ```bash
 uip login --authority https://cloud.uipath.com --organization tpenlabs -t CodingAgentsPractice
