@@ -1,6 +1,6 @@
 # Coding Agents + UiPath: Hands-On Session
 
-**Build a Coded Agent, an RPA workflow, and a Coded App — all from your coding agent, all wired into one recruitment pipeline.**
+**Build a Coded Agent, an RPA workflow, a Coded App, and a Maestro Flow — all from your coding agent, all wired into one recruitment pipeline.**
 
 !!! tip "Here is our plan for this session:"
 
@@ -9,29 +9,29 @@
     2. Build a **Coded Agent** that researches jobs and matches candidates.
     3. Build an **RPA** workflow that registers those candidates on a web form.
     4. Build a **Coded App** dashboard that shows the whole pipeline.
-    5. Optionally bring all three together in **Maestro** — a homework deep dive.
+    5. Bring the agent and the RPA workflow together in a **Maestro** Flow that runs the pipeline end to end.
 
 ## Overview
 
 Every week a recruiter at a staffing agency does the same four things by hand: search job boards, write a description for each role, read through a candidate pool to find who fits, and register the shortlist in the client's portal. Hours of work, done differently by every recruiter, with nowhere to see where anyone stands.
 
-You'll automate all four — by describing what you want in plain English and letting your coding agent build it. Three components, each handing work to the next through **Data Service**. By the end you'll know exactly when code beats drag-and-drop, and why.
+You'll automate all four — by describing what you want in plain English and letting your coding agent build it. Three components, each handing work to the next through **Data Service**, and a **Maestro** Flow that runs them as one process. By the end you'll know exactly when code beats drag-and-drop, and why.
 
 ## Goal
 
-By the end of the session you'll have three deployed components talking to each other through **Data Service**: a Python agent that finds jobs and scores candidates, an XAML workflow that registers each candidate on a website with no API, and a React dashboard the recruiter actually uses. You'll have generated all three by prompting a coding agent — not by dragging activities onto a canvas or scaffolding React by hand.
+By the end of the session you'll have four deployed components talking to each other through **Data Service**: a Python agent that finds jobs and scores candidates, an XAML workflow that registers each candidate on a website with no API, a React dashboard the recruiter actually uses, and a Maestro Flow that runs the pipeline end to end. You'll have generated all four by prompting a coding agent — not by dragging activities onto a canvas or scaffolding React by hand.
 
 !!! tip "Training Environment"
     Log in at **[https://cloud.uipath.com/tpenlabs](https://cloud.uipath.com/tpenlabs)** using tenant **CodingAgentsPractice**.
 
 ## What You'll Build
 
-Three components in the session, plus a fourth as homework:
+Four components, all built in the session:
 
 1. **Coded Agent** — a Python LangGraph agent that takes a list of job titles, web-searches current openings, generates a structured job description per role, scores a candidate pool against each one, and writes jobs and top-3 matches to Data Service
 2. **RPA Workflow** — a Studio XAML workflow that reads the matched candidates from Data Service, registers each one on the UiBank web form, and writes the registration status back
 3. **Coded App** — a React Coded App that reads the Jobs, Job Matches and Candidates entities and presents them to a recruiter, with a button that triggers the agent on demand
-4. **Maestro Process** *(homework)* — a UiPath Flow that runs the agent, pauses for a recruiter to approve the shortlist, triggers the RPA registration, and surfaces the result in the app
+4. **Maestro Flow** — a UiPath Flow that runs the agent, pauses for a recruiter to approve the shortlist, triggers the RPA registration, and surfaces the result in the app
 
 ## The scenario
 
@@ -75,15 +75,15 @@ Three components in the session, plus a fourth as homework:
       <span style="font-size: 40px; line-height: 46px; height: 46px;">🔗</span>
       <span style="font-size: 34px; font-weight: 700; color: #f6c3ab; line-height: 1;">04</span>
     </div>
-    <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 12px;">Maestro <em style="color: #6a6a6a; font-weight: 400; font-size: 14px;">(optional)</em></div>
-    <div style="font-size: 13.5px; color: #4a4a4a; line-height: 1.55; margin-bottom: 18px;">Connects the agent and the robot into one end-to-end process. See the <a href="#homework-connect-it-all-in-maestro">Maestro homework</a>.</div>
+    <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 12px;">Maestro Flow</div>
+    <div style="font-size: 13.5px; color: #4a4a4a; line-height: 1.55; margin-bottom: 18px;">Connects the agent and the robot into one end-to-end process. See <a href="#lab-4-the-maestro-flow">Lab 4</a>.</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #FA4616; font-weight: 600;">&rarr; Runs the agent, then the robot</div>
   </div>
   </div>
 
 </div>
 
-One connected story across all three labs — each one hands its output to the next through Data Service. **Maestro** then runs them as a single process.
+One connected story across all four labs — the first three hand their output to the next through Data Service, and **Maestro** runs them as a single process.
 
 ## Authenticate with your tenant
 
@@ -750,9 +750,11 @@ export function useJobs() {
 }
 ```
 
-## 🔗 Homework — Connect it all in Maestro { .lab-title }
+## 🔗 Lab 4 — the Maestro Flow { .lab-title }
 
-<div style="font-size: 15px; font-style: italic; color: #d1603a; margin: -0.6rem 0 1rem;">Optional deep dive · on your own, after the session</div>
+<div style="font-size: 15px; font-style: italic; color: #d1603a; margin: -0.6rem 0 1rem;">Agent → approval → robot, as one process</div>
+
+**30 min build**
 
 <div style="background: #16213e; border-left: 10px solid #FA4616; padding: 22px 28px; margin: 1.2rem 0 1.4rem;">
   <div style="font-size: 19px; font-weight: 700; color: #ffffff; line-height: 1.35;">Three pieces that work. Now make them run as one process.</div>
@@ -831,22 +833,23 @@ Things every team learns in the first month.
 
 ## What you built
 
-One end-to-end recruitment pipeline, in three pieces:
+One end-to-end recruitment pipeline, in four pieces:
 
 | # | Component | What it does |
 | ---: | :--- | :--- |
 | 01 | **Coded Agent** | LangGraph agent. Searches the web for jobs, generates job descriptions, matches candidates, writes to Data Service. |
 | 02 | **RPA Workflow** | XAML workflow. Reads matched candidates, registers each on UiBank, updates status. |
 | 03 | **Coded App** | React dashboard. Shows jobs, matches, and registration status, with a trigger button. |
+| 04 | **Maestro Flow** | Runs the agent, waits for a recruiter's approval, then runs the RPA workflow. |
 
-All three talk to each other. All three were built with your coding agent. All in one IDE session.
+All four talk to each other. All four were built with your coding agent. All in one IDE session.
 
 ## Next steps
 
 **This week**
 
 - Install the skills on your laptop and actually use them.
-- Do the [Maestro homework](#homework-connect-it-all-in-maestro) — wire the agent, the RPA workflow, and the app into one orchestrated process.
+- Extend your [Maestro Flow](#lab-4-the-maestro-flow) — add another step, a second approval, or a schedule.
 
 **Next 30 days**
 
