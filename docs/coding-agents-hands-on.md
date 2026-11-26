@@ -252,6 +252,9 @@ def persist(state):
 
 ### Publish the agent
 
+!!! tip "Your coding agent might ask what to do next"
+    Once the agent is built and the evals pass, your coding agent might ask how you want to use the agent next — for example **Studio Web**, **Local dev web server**, or **Skip**. If you get this question, choose **Local dev web server**. It starts `uip codedagent dev` at `http://localhost:8080`, so you can try the agent in your browser. Nothing gets published at this step. Then come back here and publish the agent.
+
 Both paths do the same thing. Run the commands yourself if you want to see each step, or hand the whole job to your coding agent.
 
 === "Manually"
