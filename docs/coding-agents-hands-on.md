@@ -675,6 +675,13 @@ npm run dev
 
 Then open `http://localhost:5173` and sign in with UiPath. Check that the Jobs, Job Matches, and Candidates tabs load data, and that the button triggers the Coded Agent.
 
+Here's one example of what the app can look like: a form to run the Job Matching Agent, counters for jobs, matches, candidates, and registrations, and tabs with the Data Service records, including each candidate's registration status from Lab 2.
+
+![An example recruiter app running at localhost:5173, with a Run Job Matching Agent form, counters for jobs, matches, candidates and registered candidates, and the Candidates tab showing each candidate's registration status](coding-agents-hands-on.images/recruiter-app-local.png)
+
+!!! note "Your app will look different"
+    Your coding agent designs the app from the prompt, so the layout, tabs, labels, and colours vary from participant to participant. That's expected. What matters is that it reads the Jobs, Job Matches, and Candidates entities, shows the registration status, and can trigger the Coded Agent.
+
 ### Deploy the app
 
 Your coding agent usually stops after the build and asks before it packs, publishes, or deploys anything. When the app works locally, ask it to take it live:
