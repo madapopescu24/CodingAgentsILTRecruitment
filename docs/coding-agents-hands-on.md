@@ -39,11 +39,11 @@ Three components in the session, plus a fourth as homework:
 
   <div style="background: #16213e; border-left: 10px solid #FA4616; padding: 26px 32px; margin-bottom: 22px;">
     <div style="font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.35;">A staffing agency is digitizing its recruitment pipeline.</div>
-    <div style="font-size: 15px; font-style: italic; color: #f6c3ab; margin-top: 10px; line-height: 1.45;">Three problems: find jobs, register candidates, and give recruiters a view of everything.</div>
+    <div style="font-size: 15px; font-style: italic; color: #f6c3ab; margin-top: 10px; line-height: 1.45;">Three problems: find jobs, register candidates, and give recruiters a view of everything. Then tie it all together.</div>
   </div>
 
   <div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: stretch;">
-  <div style="flex: 1 1 260px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
+  <div style="flex: 1 1 200px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;">
       <img src="../coding-agents-hands-on.images/icon-search.png" alt="" style="width: 46px; height: 46px; box-shadow: none; border: none;">
       <span style="font-size: 34px; font-weight: 700; color: #f6c3ab; line-height: 1;">01</span>
@@ -52,7 +52,7 @@ Three components in the session, plus a fourth as homework:
     <div style="font-size: 13.5px; color: #4a4a4a; line-height: 1.55; margin-bottom: 18px;">Searches the web for open jobs, generates structured JDs, matches against a candidate pool.</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #FA4616; font-weight: 600;">&rarr; Writes to Data Service</div>
   </div>
-  <div style="flex: 1 1 260px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
+  <div style="flex: 1 1 200px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;">
       <img src="../coding-agents-hands-on.images/icon-register.png" alt="" style="width: 46px; height: 46px; box-shadow: none; border: none;">
       <span style="font-size: 34px; font-weight: 700; color: #f6c3ab; line-height: 1;">02</span>
@@ -61,7 +61,7 @@ Three components in the session, plus a fourth as homework:
     <div style="font-size: 13.5px; color: #4a4a4a; line-height: 1.55; margin-bottom: 18px;">Reads candidate CSV, registers each one on <code>uibank.uipath.com/register-account</code>.</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #FA4616; font-weight: 600;">&rarr; Writes status back to Data Service</div>
   </div>
-  <div style="flex: 1 1 260px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
+  <div style="flex: 1 1 200px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;">
       <img src="../coding-agents-hands-on.images/icon-dashboard.png" alt="" style="width: 46px; height: 46px; box-shadow: none; border: none;">
       <span style="font-size: 34px; font-weight: 700; color: #f6c3ab; line-height: 1;">03</span>
@@ -70,11 +70,20 @@ Three components in the session, plus a fourth as homework:
     <div style="font-size: 13.5px; color: #4a4a4a; line-height: 1.55; margin-bottom: 18px;">Recruiter dashboard: open jobs, generated descriptions, matched candidates, registration status.</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #FA4616; font-weight: 600;">&rarr; Reads from Data Service</div>
   </div>
+  <div style="flex: 1 1 200px; background: #ffffff; border: 1px solid #e8e8e8; border-top: 5px solid #FA4616; padding: 20px 22px 22px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;">
+      <span style="font-size: 40px; line-height: 46px; height: 46px;">🔗</span>
+      <span style="font-size: 34px; font-weight: 700; color: #f6c3ab; line-height: 1;">04</span>
+    </div>
+    <div style="font-size: 17px; font-weight: 700; color: #16213e; margin-bottom: 12px;">Maestro <em style="color: #6a6a6a; font-weight: 400; font-size: 14px;">(optional)</em></div>
+    <div style="font-size: 13.5px; color: #4a4a4a; line-height: 1.55; margin-bottom: 18px;">Connects the agent and the robot into one end-to-end process. See the <a href="#homework-connect-it-all-in-maestro">Maestro homework</a>.</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #FA4616; font-weight: 600;">&rarr; Runs the agent, then the robot</div>
+  </div>
   </div>
 
 </div>
 
-One connected story across all three labs — each one hands its output to the next through Data Service.
+One connected story across all three labs — each one hands its output to the next through Data Service. **Maestro** then runs them as a single process.
 
 ## Authenticate with your tenant
 
