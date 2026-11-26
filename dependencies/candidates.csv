@@ -1,0 +1,4 @@
+first_name,last_name,middle_name,sex,title,employment_status,date_of_birth,marital_status,num_dependents,username,email,password
+Alice,Nguyen,,Female,Ms,Full-time,1/15/1990,Single,0,alice.nguyen,alice.nguyen@example.com,Welcome2026!
+Ben,Carter,J.,Male,Mr,Full-time,3/22/1985,Married,2,ben.carter,ben.carter@example.com,Welcome2026!
+Clara,Osei,,Female,Ms,Full-time,7/4/1992,Single,1,clara.osei,clara.osei@example.com,Welcome2026!
