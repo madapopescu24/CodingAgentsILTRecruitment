@@ -449,7 +449,8 @@ Build a UiPath workflow that registers each candidate from candidates.csv at
 uibank.uipath.com/register-account. The name of the workflow should be
 {YourName}RegisterInUiBank. candidates.csv contains first_name, last_name,
 middle_name, sex, title, employment_status, date_of_birth, marital_status,
-num_dependents, username, email, and password.
+num_dependents, username, email, and password. After each registration, write
+the registration Status back to Data Service (Candidates entity).
 ```
 
 !!! tip "Your coding agent might ask to install UiPath packages"
