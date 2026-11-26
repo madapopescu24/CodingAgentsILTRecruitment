@@ -535,6 +535,15 @@ Publish and create the process in CodingAgentsILT folder.
 
 ![The coding agent's recap after building the workflow, asking whether to run it, with the publish prompt typed in](coding-agents-hands-on.images/publish-rpa-process-prompt.png)
 
+### Run it from Orchestrator
+
+Once your coding agent confirms the process is created, run it from **Orchestrator**:
+
+1. Open **Orchestrator** and go to the **CodingAgentsILT** folder.
+2. Select **Automations** › **Processes** and find `{YourName}RegisterInUiBank`.
+3. Select **Start a job** (the ▶ icon) next to the process, then **Start**.
+4. Open the **Jobs** tab and watch the job until its state is **Successful**.
+
 ## <img src="../coding-agents-hands-on.images/icon-dashboard.png" alt="" style="width: 1.05em; height: 1.05em; vertical-align: -0.12em; margin-right: 0.4em; border: none; box-shadow: none;">Lab 3 — the Coded App { .lab-title }
 
 **100 min build + 20 min review**
