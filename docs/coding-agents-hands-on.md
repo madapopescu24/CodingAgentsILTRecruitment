@@ -265,6 +265,10 @@ def persist(state):
 
     Open that link in your browser to see your agent running and try it out. The token is unique to you and changes each time the dev server starts, so copy the full link from your own terminal — the one above won't work as is.
 
+    Here's what a run looks like in the local dev console: enter a job title in the input, click **Execute**, and watch the agent go through each step of the graph. When it finishes, the traces show each step and the output shows the ranked candidates.
+
+    <video src="../coding-agents-hands-on.images/run-agent-local-dev-server.mp4" autoplay loop muted playsinline controls aria-label="Running the job matching agent from the local dev console: entering a job title, clicking Execute, watching the graph steps complete, and reading the ranked candidates in the output" style="display: block; width: 100%; margin: 1.5rem auto; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);"></video>
+
 Both paths do the same thing. Run the commands yourself if you want to see each step, or hand the whole job to your coding agent.
 
 === "Manually"
